@@ -49,7 +49,8 @@ public class DesignToolbar extends Toolbar {
   private static final String WIDGET_NAME_DOWNLOAD = "Download";
   private static final String WIDGET_NAME_DOWNLOAD_TO_PHONE = "DownloadToPhone";
   private static final String WIDGET_NAME_OPEN_BLOCKS_EDITOR = "OpenBlocksEditor";
-
+  private static final String WIDGET_NAME_EXPORT_TO_AIG = "ExportToAIG";
+  
   private boolean codeblocksButtonCancel = false;
 
   private Label projectName;
@@ -88,7 +89,11 @@ public class DesignToolbar extends Toolbar {
         MESSAGES.downloadToComputerButton(), new DownloadAction()));
     buildItems.add(new ToolbarItem(WIDGET_NAME_DOWNLOAD_TO_PHONE,
         MESSAGES.downloadToPhoneButton(), new DownloadToPhoneAction()));
+    
     addDropDownButton(WIDGET_NAME_BUILD, MESSAGES.buildButton(), buildItems, true);
+    
+    addButton(new ToolbarItem(WIDGET_NAME_EXPORT_TO_AIG,
+        MESSAGES.exportToAIGButton(), new ExportToAIG()), true);
 
   }
 
@@ -238,6 +243,13 @@ public class DesignToolbar extends Toolbar {
       } else {
         CodeblocksManager.getCodeblocksManager().startCodeblocks();
       }
+    }
+  }
+  
+  private class ExportToAIG implements Command {
+    @Override
+    public void execute() {
+      // Do Nothing for now
     }
   }
 

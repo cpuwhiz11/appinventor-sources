@@ -101,6 +101,10 @@ public interface OdeMessages extends Messages {
   @DefaultMessage("Package for Phone")
   @Description("Label of the button leading to build related cascade items")
   String buildButton();
+  
+  @DefaultMessage("Export to AIG")
+  @Description("Label of the button leading to build exporting to AIG")
+  String exportToAIGButton();
 
   @DefaultMessage("Packaging...")
   @Description("Label of the button leading to build related cascade items, when building")
