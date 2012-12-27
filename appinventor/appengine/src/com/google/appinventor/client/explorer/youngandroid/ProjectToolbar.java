@@ -15,14 +15,12 @@ import com.google.appinventor.client.explorer.project.Project;
 import com.google.appinventor.client.tracking.Tracking;
 import com.google.appinventor.client.utils.Downloader;
 import com.google.appinventor.client.widgets.Toolbar;
-import com.google.appinventor.client.widgets.Toolbar.ToolbarItem;
 import com.google.appinventor.client.wizards.DownloadUserSourceWizard;
 import com.google.appinventor.client.wizards.KeystoreUploadWizard;
 import com.google.appinventor.client.wizards.ProjectUploadWizard;
 import com.google.appinventor.client.wizards.youngandroid.NewYoungAndroidProjectWizard;
 import com.google.appinventor.client.youngandroid.CodeblocksManager;
 import com.google.appinventor.shared.rpc.ServerLayout;
-import com.google.appinventor.shared.rpc.user.UserInfoServiceAsync;
 import com.google.appinventor.shared.storage.StorageUtil;
 import com.google.common.collect.Lists;
 import com.google.gwt.user.client.Command;
@@ -47,6 +45,7 @@ public class ProjectToolbar extends Toolbar {
   private static final String WIDGET_NAME_DOWNLOAD_KEYSTORE = "DownloadKeystore";
   private static final String WIDGET_NAME_UPLOAD_KEYSTORE = "UploadKeystore";
   private static final String WIDGET_NAME_DELETE_KEYSTORE = "DeleteKeystore";
+  private static final String WIDGET_NAME_EXPORT_TO_AIG = "ExportToAIG";
 
   /**
    * Initializes and assembles all commands into buttons in the toolbar.
@@ -68,6 +67,8 @@ public class ProjectToolbar extends Toolbar {
         MESSAGES.downloadSourceButton(), new DownloadSourceAction()));
     otherItems.add(new ToolbarItem(WIDGET_NAME_UPLOAD_SOURCE,
         MESSAGES.uploadSourceButton(), new UploadSourceAction()));
+    otherItems.add(new ToolbarItem(WIDGET_NAME_EXPORT_TO_AIG,
+        MESSAGES.exportToAIGButton(), new ExportToAIG()));
     otherItems.add(null);
     otherItems.add(new ToolbarItem(WIDGET_NAME_DOWNLOAD_KEYSTORE,
         MESSAGES.downloadKeystoreButton(), new DownloadKeystoreAction()));
@@ -106,6 +107,13 @@ public class ProjectToolbar extends Toolbar {
 
       Downloader.getInstance().download(ServerLayout.DOWNLOAD_SERVLET_BASE +
           ServerLayout.DOWNLOAD_ALL_PROJECTS_SOURCE);
+    }
+  }
+  
+  private class ExportToAIG implements Command {
+    @Override
+    public void execute() {
+      // Do Nothing for now
     }
   }
 

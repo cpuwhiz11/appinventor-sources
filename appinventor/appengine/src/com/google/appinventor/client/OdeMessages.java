@@ -101,10 +101,6 @@ public interface OdeMessages extends Messages {
   @DefaultMessage("Package for Phone")
   @Description("Label of the button leading to build related cascade items")
   String buildButton();
-  
-  @DefaultMessage("Export to AIG")
-  @Description("Label of the button leading to build exporting to AIG")
-  String exportToAIGButton();
 
   @DefaultMessage("Packaging...")
   @Description("Label of the button leading to build related cascade items, when building")
@@ -775,6 +771,10 @@ public interface OdeMessages extends Messages {
   @DefaultMessage("Upload Source")
   @Description("Label of the button for uploading source")
   String uploadSourceButton();
+  
+  @DefaultMessage("Export to AIG")
+  @Description("Label of the button leading to build exporting to AIG")
+  String exportToAIGButton();
 
   @DefaultMessage("Download All Projects")
   @Description("Label of the button to download all projects' source code")
